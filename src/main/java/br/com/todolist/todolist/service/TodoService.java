@@ -3,6 +3,7 @@ package br.com.todolist.todolist.service;
 import java.util.List;
 
 import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.com.todolist.todolist.entity.Todo;
@@ -23,9 +24,8 @@ public class TodoService {
     }
 
     public List<Todo> list() {
-        Sort sort = Sort.by("priority").descending().and(
-            Sort.by("name").ascending()
-        );
+        Sort sort = Sort.by(Direction.DESC, "priority")
+        .and(Sort.by(Direction.ASC, "id"));
 
         return todoRepository.findAll(sort);
     }
