@@ -51,7 +51,7 @@ class TodolistApplicationTests {
 	@Sql("/import.sql")
 	@Test
 	void testUpdateTodoSuccess() {
-		var todo = new Todo(TODO.getId(), TODO.getName(), TODO.getDescription() + "Up", TODO.isDone(), TODO.getPriority() + 1);
+		var todo = new Todo(TODO.getId(), TODO.getName(), TODO.getDescription() + " Up", TODO.isDone(), TODO.getPriority() + 1);
 
 		webTestClient
 			.put()
