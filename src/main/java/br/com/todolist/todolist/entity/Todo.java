@@ -20,7 +20,9 @@ public class Todo {
     private boolean isDone;
     private int priority;
 
-   
+    public Todo () {
+
+    }
     
     public Todo(Long id, @NotBlank String name, @NotBlank String description, boolean isDone, int priority) {
         this.id = id;
