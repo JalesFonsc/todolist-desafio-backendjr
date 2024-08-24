@@ -76,6 +76,4 @@ public class Todo {
     public boolean equals(Object object) {
         return EqualsBuilder.reflectionEquals(object, this);
     }
-
-    
 }

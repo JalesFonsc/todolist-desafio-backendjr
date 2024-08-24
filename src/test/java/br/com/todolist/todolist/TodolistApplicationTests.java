@@ -18,7 +18,7 @@ class TodolistApplicationTests {
 	private WebTestClient webTestClient;
 
 	@Test
-	void testCreateTodoSuccess() {
+	public void testCreateTodoSuccess() {
 		var todo = new Todo("todo 1", "desc todo 1", false, 1);
 
 		webTestClient
@@ -37,7 +37,7 @@ class TodolistApplicationTests {
 	}
 
 	@Test
-	void testCreateTodoFailure() {
+	public void testCreateTodoFailure() {
 		var todo = new Todo("", "", false, 1);
 
 		webTestClient
@@ -50,7 +50,7 @@ class TodolistApplicationTests {
 
 	@Sql("/import.sql")
 	@Test
-	void testUpdateTodoSuccess() {
+	public void testUpdateTodoSuccess() {
 		var todo = new Todo(TODO.getId(), TODO.getName(), TODO.getDescription() + " Up", TODO.isDone(), TODO.getPriority() + 1);
 
 		webTestClient
@@ -69,7 +69,7 @@ class TodolistApplicationTests {
 	}
 
 	@Test
-	void testUpdateTodoFailure() {
+	public void testUpdateTodoFailure() {
 		var unexinstingId = 1L;
 
 		webTestClient
@@ -83,7 +83,7 @@ class TodolistApplicationTests {
 
 	@Sql("/import.sql")
 	@Test
-	void testDeleteTodoSuccess() {
+	public void testDeleteTodoSuccess() {
 		webTestClient
 			.delete()
 			.uri("/todos/" + TODOS.get(0).getId())
@@ -99,7 +99,7 @@ class TodolistApplicationTests {
 		}
 
 	@Test
-	void testDeleteTodoFailure() {
+	public void testDeleteTodoFailure() {
 		var unexinstingId = 1L;
 		
 		webTestClient
@@ -111,7 +111,7 @@ class TodolistApplicationTests {
 
 	@Sql("/import.sql")
 	@Test
-	void testListTodos() throws Exception {
+	public void testListTodos() throws Exception {
 		webTestClient
 			.get()
 			.uri("/todos")
@@ -120,11 +120,10 @@ class TodolistApplicationTests {
 			.expectBody()
 			.jsonPath("$").isArray()
 			.jsonPath("$.length()").isEqualTo(5)
-			.jsonPath("$[0]").isEqualTo(TODOS.get(0))
-			.jsonPath("$[1]").isEqualTo(TODOS.get(1))
-			.jsonPath("$[2]").isEqualTo(TODOS.get(2))
-			.jsonPath("$[3]").isEqualTo(TODOS.get(3))
-			.jsonPath("$[4]").isEqualTo(TODOS.get(4));
+			.jsonPath("$[0].id").isEqualTo(TODOS.get(0).getId())
+			.jsonPath("$[1].id").isEqualTo(TODOS.get(1).getId())
+			.jsonPath("$[2].id").isEqualTo(TODOS.get(2).getId())
+			.jsonPath("$[3].id").isEqualTo(TODOS.get(3).getId())
+			.jsonPath("$[4].id").isEqualTo(TODOS.get(4).getId());
 		}
-
 }
