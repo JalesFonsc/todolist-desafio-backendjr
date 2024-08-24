@@ -26,7 +26,7 @@ class TodolistApplicationTests {
 			.uri("/todos")
 			.bodyValue(todo)
 			.exchange()
-			.expectStatus().isOk()
+			.expectStatus().isCreated()
 			.expectBody()
 			.jsonPath("$").isArray()
 			.jsonPath("$.length()").isEqualTo(1)
@@ -62,10 +62,10 @@ class TodolistApplicationTests {
 			.expectBody()
 			.jsonPath("$").isArray()
 			.jsonPath("$.length()").isEqualTo(5)
-			.jsonPath("$[0].name").isEqualTo(TODOS.get(1).getName())
-			.jsonPath("$[0].description").isEqualTo(TODOS.get(1).getDescription())
-			.jsonPath("$[0].done").isEqualTo(TODOS.get(1).isDone())
-			.jsonPath("$[0].priority").isEqualTo(TODOS.get(1).getPriority());
+			.jsonPath("$[0].name").isEqualTo(todo.getName())
+			.jsonPath("$[0].description").isEqualTo(todo.getDescription())
+			.jsonPath("$[0].done").isEqualTo(todo.isDone())
+			.jsonPath("$[0].priority").isEqualTo(todo.getPriority());
 	}
 
 	@Test
