@@ -2,7 +2,7 @@
   TODO List
 </h1>
 
-Pequeno projeto back-end de uma API para gerenciamento de anotações/tarefas (CRUD - ToDo List) e que que faz parte [desse desafio](https://github.com/simplify-liferay/desafio-junior-backend-simplify).
+Pequeno projeto back-end de uma API para gerenciamento de anotações/tarefas (CRUD - ToDo List) e que faz parte [desse desafio](https://github.com/simplify-liferay/desafio-junior-backend-simplify).
 
 ## Tecnologias
  
