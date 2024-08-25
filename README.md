@@ -2,6 +2,9 @@
   TODO List
 </h1>
 
+<img src="https://img.shields.io/static/v1?label=Tipo&message=Desafio&color=8257E5&labelColor=000000" alt="Desafio" />
+</p>
+
 Pequeno projeto back-end de uma API para gerenciamento de anotações/tarefas (CRUD - ToDo List) e que faz parte [desse desafio](https://github.com/simplify-liferay/desafio-junior-backend-simplify).
 
 Menção honrosa a [Giuliana Bezerra](https://github.com/giuliana-bezerra).
