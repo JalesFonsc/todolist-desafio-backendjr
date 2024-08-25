@@ -4,6 +4,8 @@
 
 Pequeno projeto back-end de uma API para gerenciamento de anotações/tarefas (CRUD - ToDo List) e que faz parte [desse desafio](https://github.com/simplify-liferay/desafio-junior-backend-simplify).
 
+Menção honrosa a [Giuliana Bezerra](https://github.com/giuliana-bezerra).
+
 ## Tecnologias
  
 - [Spring Boot](https://spring.io/projects/spring-boot)
